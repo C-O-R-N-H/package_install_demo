@@ -1,0 +1,6 @@
+external_packages/python/math_pkg.egg-info
+implementation/cpp/build/
+external_packages/cpp/maths_pkg/build/
+external_packages/python/math_pkg/__pycache__/
+external_packages/python/math_pkg/advanced/__pycache__/
+external_packages/python/math_pkg/basic/__pycache__/
