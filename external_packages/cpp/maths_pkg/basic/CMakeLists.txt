@@ -6,4 +6,4 @@ target_include_directories(math_basic PUBLIC include )
 
 # Install instructions
 install(TARGETS math_basic DESTINATION lib)
-install(DIRECTORY include/basic DESTINATION include)
+install(DIRECTORY include/basic DESTINATION include/maths_pkg)

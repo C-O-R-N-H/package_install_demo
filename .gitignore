@@ -4,3 +4,5 @@ external_packages/cpp/maths_pkg/build/
 external_packages/python/math_pkg/__pycache__/
 external_packages/python/math_pkg/advanced/__pycache__/
 external_packages/python/math_pkg/basic/__pycache__/
+.vscode/
+implementation/cpp/test_cpp

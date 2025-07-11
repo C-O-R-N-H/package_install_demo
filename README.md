@@ -290,3 +290,30 @@ make
 | Linkage      | Handled by Python interpreter      | Must configure `.so` linking + `ldconfig` |
 
 ---
+
+# Inspecting Install Structure
+## C++ Structure
+After building and installing the C++ components, navigate to:
+```bash
+cd /usr/local/lib
+ls | grep "libmath"
+```
+You should observe two `.so` files—these are the shared library binaries produced during the build process. These libraries are used during linking when other programs depend on the functionality provided by your package.
+
+The corresponding C++ header files are located in:
+```bash
+/usr/local/include/maths_pkg/basic
+/usr/local/include/maths_pkg/advanced
+```
+Note that the structure of the directories matches what was set in the CMakeLists. It should also be noted that the `/usr/local/include` directory is one of the standard locations for the compiler to look when including headers.
+
+## Python Structure
+For the Python packages, because we installed it in editable mode, the package is not copied into the Python `site-packages` directory. Instead, Python creates an `.egg-link` file in your user or environment-specific site-packages directory. This file contains a path to your source directory and effectively acts like a symbolic link. To locate this file:
+```bash
+cd ~/.local/lib/python<version>/site-packages
+cat math_pkg.egg-link
+```
+> Replace `<version>` with your Python version, such as `python3.8`. 
+
+The contents of the `.egg-link` file will be the path to your package’s source directory (e.g., `~/src/tmp/package_install_demo/external_packages/python`), which Python uses to dynamically resolve imports. This is ideal for development as it allows changes to the source code to take effect without reinstalling the package.
+

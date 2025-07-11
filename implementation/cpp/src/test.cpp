@@ -1,8 +1,9 @@
 #include <iostream>
-#include "basic/add.hpp"
-#include "basic/sub.hpp"
-#include "advanced/multiply.hpp"
-#include "advanced/divide.hpp"
+
+#include "maths_pkg/basic/add.hpp"
+#include "maths_pkg/basic/sub.hpp"
+#include "maths_pkg/advanced/multiply.hpp"
+#include "maths_pkg/advanced/divide.hpp"
 
 int main() {
     
